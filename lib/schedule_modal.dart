@@ -94,7 +94,7 @@ class ScheduleModal {
                             _errorMessage = 'Select frequency is required';
                           });
                         } else {
-                          mqttManager.publishPlanTime(_selectedTime!.millisecondsSinceEpoch.toString());
+                          mqttManager.publishPlanTime((_selectedTime!.millisecondsSinceEpoch/1000).toString());
                           if (_repeat && _repeatFrequency != null) {
                             mqttManager.publishPlanInterval(_repeatFrequency!);
                           }
